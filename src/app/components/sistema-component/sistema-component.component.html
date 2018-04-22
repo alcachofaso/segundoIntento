@@ -1,3 +1,30 @@
-<p>
-  sistema-component works!
-</p>
+
+    <nav>
+        <div>
+          <div>
+            <ul>
+                <a (click)=opcion(0)>Inicio</a>
+                  <a (click)=opcion(1)>opcion 1</a>
+                  <a (click)=opcion(2)> opcion 2</a>
+                  <a (click)=opcion(3)>opcion 3</a>
+            </ul>
+          </div>
+        </div>
+      </nav>
+     
+      <div class=card>
+          <div class="car-body">
+                <div *ngIf="this.accion===0">
+                    opcion 0
+                </div>
+                <div *ngIf="this.accion===1">
+                    opcion 1
+                </div>
+                <div *ngIf="this.accion===2">
+                    opcion 2
+                </div>
+                <div *ngIf="this.accion===3">
+                    opcion 3
+                </div>
+          </div>
+        </div>

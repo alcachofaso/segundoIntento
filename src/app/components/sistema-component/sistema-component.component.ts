@@ -6,9 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sistema-component.component.css']
 })
 export class SistemaComponentComponent implements OnInit {
+  accion:number;
 
-  constructor() { }
+  constructor() {
+    this.accion=0;
+   }
 
+  opcion(_opcion)
+  {
+    if(_opcion!=this.accion)
+      this.accion=_opcion;
+  }
   ngOnInit() {
   }
 

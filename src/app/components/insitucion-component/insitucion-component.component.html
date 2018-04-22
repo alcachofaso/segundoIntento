@@ -1,7 +1,30 @@
-<nav>
-  <ul>
-    <li>Cuentas de Doocente</li>
-    <li>Cuentas de estudiantes</li>
-    <li>Informacion Institución</li>
-  </ul>
-</nav>
+
+    <nav>
+        <div>
+          <div>
+            <ul>
+                <a (click)=opcion(0)>Inicio</a>
+                  <a (click)=opcion(1)>Cuentas de Doocente</a>
+                  <a (click)=opcion(2)> Informacion Institución</a>
+                  <a (click)=opcion(3)>Cuentas de estudiantes</a>
+            </ul>
+          </div>
+        </div>
+      </nav>
+     
+      <div class=card>
+          <div class="car-body">
+                <div *ngIf="this.accion===0">
+                    <app-inicio-institucion></app-inicio-institucion>
+                </div>
+                <div *ngIf="this.accion===1">
+                    <app-docente-insitucion></app-docente-insitucion>
+                </div>
+                <div *ngIf="this.accion===2">
+                    <app-informacion-insitucion></app-informacion-insitucion>
+                </div>
+                <div *ngIf="this.accion===3">
+                    <app-estudiante-insitucion></app-estudiante-insitucion>
+                </div>
+          </div>
+        </div>

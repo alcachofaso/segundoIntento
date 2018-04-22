@@ -22,26 +22,36 @@ import { UsuarioService } from './services/usuario.service'
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
 //routing
-import {AppRoutingModule, routingComponents} from './app-routing.module'
+//import {AppRoutingModule, routingComponents} from './app-routing.module';
+//import { routes } from "./app-routing.module";
+import { RouterModule } from '@angular/router';
 
+//components
 import { SistemaComponentComponent } from './components/sistema-component/sistema-component.component';
 import { InsitucionComponentComponent } from './components/insitucion-component/insitucion-component.component';
 import { DocenteComponentComponent } from './components/docente-component/docente-component.component';
 import { PsicopedaComponentComponent } from './components/psicopeda-component/psicopeda-component.component';
 import { PsicoComponentComponent } from './components/psico-component/psico-component.component';
+import { InicioInstitucionComponent } from './components/insitucion-component/inicio-institucion/inicio-institucion.component';
+import { DocenteInsitucionComponent } from './components/insitucion-component/docente-insitucion/docente-insitucion.component';
+import { InformacionInsitucionComponent } from './components/insitucion-component/informacion-insitucion/informacion-insitucion.component';
+import { EstudianteInsitucionComponent } from './components/insitucion-component/estudiante-insitucion/estudiante-insitucion.component';
 
-import { routes } from "./app-routing.module";
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    routingComponents,
     SistemaComponentComponent,
     InsitucionComponentComponent,
     DocenteComponentComponent,
     PsicopedaComponentComponent,
-    PsicoComponentComponent
+    PsicoComponentComponent,
+    InicioInstitucionComponent,
+    DocenteInsitucionComponent,
+    InformacionInsitucionComponent,
+    EstudianteInsitucionComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +63,17 @@ import { routes } from "./app-routing.module";
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    //routing
+    RouterModule.forRoot([
+      {path: 'Sistema', component: SistemaComponentComponent},
+      {path: 'Insitucion', component: InsitucionComponentComponent},
+      {path: 'Psicopedagogo', component: PsicopedaComponentComponent},
+      {path: 'Docente', component: DocenteComponentComponent},
+      {path: 'Psicologo', component: PsicoComponentComponent}
+     /* {path: "**", redirectTo: "/"},
+      {path: "", redirectTo: "/"}*/
+  ])
     
   ],
   providers: [

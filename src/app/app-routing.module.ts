@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+/*import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import {SistemaComponentComponent} from "./components/sistema-component/sistema-component.component";
 import {InsitucionComponentComponent} from "./components/insitucion-component/insitucion-component.component";
@@ -28,4 +28,4 @@ export const routingComponents = [
     DocenteComponentComponent,
     PsicopedaComponentComponent,
     PsicoComponentComponent
-]
+]*/
