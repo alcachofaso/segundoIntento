@@ -1,0 +1,34 @@
+<div *ngIf="authService.user | async">
+<h1 >Welcome {{ (authService.user | async)?.email }}!></h1>
+
+  <button (click)="addCustomKey()">ADFJ</button>
+
+</div>
+
+<div *ngIf="!(authService.user | async)">
+  <div class=card >
+    <div class=card-body>
+      <div>
+      <input type="text" [(ngModel)]="email" placeholder="E-mail">
+    </div>
+    <div>
+      <input type="password" [(ngModel)]="password" placeholder="Contraseña">
+    </div>
+    <div>
+      <button (click)="signup()" [disabled]="!email || !password">
+        
+        Signup
+      </button>
+    </div>
+    <div>
+      <button (click)="login()" [disabled]="!email || !password">
+        Login
+      </button>
+      </div>
+    </div>
+  </div> 
+</div>
+
+<button (click)="logout('LAaVZSgntYnL1WamPV4','Prueba')" *ngIf="authService.user | async">
+  Logout
+</button>
